@@ -1,0 +1,16 @@
+
+.header{
+  display: flex;
+  padding: 19px 10%;
+}
+
+.arrowWrapper {
+  display: block;
+  cursor: pointer;
+}
+
+.logoWrapper{
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}

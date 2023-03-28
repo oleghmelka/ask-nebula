@@ -1,0 +1,18 @@
+.heading {
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.subheading {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.text {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.birhDate {
+  background-color: red;
+}
