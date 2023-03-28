@@ -4,19 +4,14 @@ import styles from './Stage_6.module.css';
 type Props = {
   nextStage: (stage: number) => void
   stage: number
-  variant: string
+  status: string
   gender: string
   age: number
-  hasChildren: boolean
+  isParent: boolean
+  isSingleParent: boolean
 }
 
-const Stage_6: React.FC<Props> = ({nextStage, stage, variant, gender, age, hasChildren}) => {
-
-
-
-/*   const zodiac = useState<string>('strelets')
-  const gender = useState<string>('noone')
-*/
+const Stage_6: React.FC<Props> = ({nextStage, stage, status, gender, age, isParent, isSingleParent}) => {
 
   const handleGoNext = () => {
     nextStage(stage + 1)
@@ -24,13 +19,11 @@ const Stage_6: React.FC<Props> = ({nextStage, stage, variant, gender, age, hasCh
 
   return (
     <main>
-      {
-        variant === 'parent' 
-        ?
+      { status === 'in a relationship' && (
           // in figma it part in the bottom
           <div className={styles.wrapper}>
             <h1 className={styles.heading}>
-              `${gender} ${age} ${hasChildren} need a slightly different approach 
+              `${gender} ${age} ${isParent || isSingleParent && 'who have children'} need a slightly different approach 
               to improve their relationship. Which statement best describes you?`
             </h1>
             <div className={styles.buttons}>
@@ -39,11 +32,12 @@ const Stage_6: React.FC<Props> = ({nextStage, stage, variant, gender, age, hasCh
               <button onClick={handleGoNext}>I’m generally happy in my relationship</button>
             </div>
           </div>
-        :
+        )}
+        { status === 'single' && (
           // in figma it part in the top
           <div className={styles.wrapper}>
             <h1 className={styles.heading}>
-              `Single ${gender} ${age} ${hasChildren} need a slightly different approach to find
+              `Single ${gender} ${age} ${isParent || isSingleParent && 'who have children'} need a slightly different approach to find
               their perfect partner. But first, how did you feel in your last relationship?``
             </h1>
             <div className={styles.buttons}>
@@ -53,7 +47,7 @@ const Stage_6: React.FC<Props> = ({nextStage, stage, variant, gender, age, hasCh
               <button onClick={handleGoNext}>I’ve never been in a relationship</button>
             </div>
           </div>
-      }
+      )}
 
     </main>
   )

@@ -18,19 +18,58 @@ import { Dispatch } from "redux"
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 
+import { InitialStateType } from "../src/store/reducer"
+
 
 function App() {
 
 
   const stage: number = useSelector(
-    (state: StagesState) => state.stage,
+    (state: InitialStateType) => state.stage,
     shallowEqual
   )
 
-/*   const title: string = useSelector(
-    (state: StagesState) => state.title,
+  const status: string = useSelector(
+    (state: InitialStateType) => state.status,
     shallowEqual
-  ) */
+  )
+
+  const gender: string = useSelector(
+    (state: InitialStateType) => state.gender,
+    shallowEqual
+  )
+
+  const age: number = useSelector(
+    (state: InitialStateType) => state.age,
+    shallowEqual
+  )
+
+  const zodiac: string = useSelector(
+    (state: InitialStateType) => state.zodiac,
+    shallowEqual
+  )
+
+  const isParent: boolean = useSelector(
+    (state: InitialStateType) => state.isParent,
+    shallowEqual
+  )
+
+  const isSingleParent: boolean = useSelector(
+    (state: InitialStateType) => state.isSingleParent,
+    shallowEqual
+  )
+
+  const decisionSourse: string = useSelector(
+    (state: InitialStateType) => state.decisionSourse,
+    shallowEqual
+  )
+
+
+  
+
+
+
+
 
   const dispatch: Dispatch<any> = useDispatch()
 
@@ -55,28 +94,28 @@ function App() {
         return <Stage_2 nextStage={nextStage} stage={stage}  />
 
       case 3:
-        return <Stage_3 nextStage={nextStage} stage={stage} />
+        return <Stage_3 nextStage={nextStage} stage={stage} zodiac={zodiac}/>
 
       case 4:
           return <Stage_4 nextStage={nextStage} stage={stage} />
 
       case 5:
-          return <Stage_5 nextStage={nextStage} stage={stage} variant="parent"/>
+          return <Stage_5 nextStage={nextStage} stage={stage} status={status} />
 
       case 6:
-          return <Stage_6 nextStage={nextStage} stage={stage} variant="parent" gender="male" age={25} hasChildren={true} />
+          return <Stage_6 nextStage={nextStage} stage={stage} status={status} gender={gender} age={age} isParent={isParent} isSingleParent={isSingleParent} />
 
       case 7:
-          return <Stage_7 nextStage={nextStage} stage={stage} variant="parent" />
+          return <Stage_7 nextStage={nextStage} stage={stage} />
 
       case 8:
-          return <Stage_8  nextStage={nextStage} stage={stage} previousStage={previousStage} variant="heart" gender="string" age={41} hasChildren={true} zodiac="string" />
+          return <Stage_8 nextStage={nextStage} stage={stage} previousStage={previousStage} zodiac={zodiac} decisionSourse={decisionSourse} />
       
       case 9:
           return <Stage_9 nextStage={nextStage} stage={stage} variant="string" />
     
       default:
-        <p>Hello Life</p>
+        <main>Main content</main>
     }
   }
 

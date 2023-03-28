@@ -1,31 +1,40 @@
 import React, {useState} from 'react'
 import styles from './Stage_7.module.css';
 
+import { Dispatch } from "redux"
+import { useSelector, shallowEqual, useDispatch } from "react-redux"
+import { setDecisionSourse } from "../../store/actionCreators"
+
 type Props = {
   nextStage: (stage: number) => void
   stage: number
-  variant: string
 }
 
-const Stage_7: React.FC<Props> = ({nextStage, stage, variant}) => {
+const Stage_7: React.FC<Props> = ({nextStage, stage}) => {
 
-
-
-/*   const zodiac = useState<string>('strelets')
-  const gender = useState<string>('noone')
-*/
+  const dispatch: Dispatch<any> = useDispatch()
 
   const handleGoNext = () => {
     nextStage(stage + 1)
   } 
 
+  const SettingDecisionSourse = React.useCallback(
+    (decisionSourse: 'heart' | 'head' | 'both') => dispatch(setDecisionSourse(decisionSourse)),
+    [dispatch]
+  )
+
+  const handleSetDecisionSourse = (decisionSourse: 'heart' | 'head' | 'both') => {
+    SettingDecisionSourse(decisionSourse)
+    handleGoNext()
+  }
+
   return (
     <main>
       <h1 className={styles.heading}>Do you make decisions with your head or your heart?</h1>
       <div className={styles.buttons}>
-        <button onClick={handleGoNext}>Heart</button>
-        <button onClick={handleGoNext}>Head</button>
-        <button onClick={handleGoNext}>Both</button>
+        <button onClick={() => handleSetDecisionSourse('heart')}>Heart</button>
+        <button onClick={() => handleSetDecisionSourse('head')}>Head</button>
+        <button onClick={() => handleSetDecisionSourse('both')}>Both</button>
       </div>
     </main>
   )

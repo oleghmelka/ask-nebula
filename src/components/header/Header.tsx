@@ -3,12 +3,12 @@ import logo from '../../assets/logo.png'
 import arrow from '../../assets/arrow.png'
 import styles from './Header.module.css';
 
-type IHeader = {
+type HeaderType = {
   stage: number
   previousStage: (stage: number) => void
 }
 
-const Header = ({stage, previousStage}: IHeader) => {
+const Header = ({stage, previousStage}: HeaderType) => {
   
   const handleGoBack = () => {
     previousStage(stage - 1)

@@ -3,7 +3,7 @@ import styles from './Stage_1.module.css';
 
 import { Dispatch } from "redux"
 import { useSelector, shallowEqual, useDispatch } from "react-redux"
-//import { setGender } from "../../store/actionCreators"
+import { setGender } from "../../store/actionCreators"
 
 type Props = {
   nextStage: (stage: number) => void
@@ -19,14 +19,15 @@ const Stage_1: React.FC<Props> = ({nextStage, stage}) => {
     nextStage(stage + 1)
   }
 
-/*   const handleSetGender = React.useCallback(
+  const SettingGender = React.useCallback(
     (gender: string) => dispatch(setGender(gender)),
     [dispatch]
-  )  */
+  )
 
-/*   const handleSetGender = (SOMEGENDER: string) => {
-    nextStage(stage + 1)
-  } */
+  const handleSetGender = (someGender: string) => {
+    SettingGender(someGender)
+    handleGoNext()
+  }
 
   return (
     <main>
@@ -36,17 +37,11 @@ const Stage_1: React.FC<Props> = ({nextStage, stage}) => {
       <div className={styles.imageWrapper}>
         <div className={styles.male}>
           <img src='' />
-          <button
-            //onClick={handleSetGender('male')}
-            onClick={handleGoNext}
-          >Male</button>
+          <button onClick={() => handleSetGender('male')}>Male</button>
         </div>
         <div className={styles.female}>
           <img src='' />
-          <button
-            //onClick={() => handleSetGender('Female')}
-            onClick={handleGoNext}
-          >Female</button>
+          <button onClick={() => handleSetGender('female')}>Female</button>
         </div>
       </div>
     </main>

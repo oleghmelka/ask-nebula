@@ -1,15 +1,29 @@
 import React, {useState} from 'react'
 import styles from './Stage_3.module.css';
+import { useSelector, shallowEqual, useDispatch } from "react-redux"
+
+
 
 type Props = {
   nextStage: (stage: number) => void
   stage: number
+  zodiac: string
 }
 
-const Stage_3: React.FC<Props> = ({nextStage, stage}) => {
+const Stage_3: React.FC<Props> = ({nextStage, stage, zodiac}) => {
 
-  const zodiac = useState<string>('strelets')
-  const gender = useState<string>('noone')
+  type StagesState = {
+    stage: number
+    total: number
+    gender: string
+  }
+  
+  const gender: string = useSelector(
+    (state: StagesState) => state.gender,
+    shallowEqual
+  )
+
+  console.log('gender from Stage_3', gender)
 
   const handleGoNext = () => {
     setTimeout(() => {

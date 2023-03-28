@@ -1,8 +1,10 @@
-type StagesState = {
+//import * as actionTypes from "../src/store/actionTypes"
+
+/* type StagesState = {
   stage: number
   total: number
   gender: string
-}
+} */
 
 /* type GenderState = {
   stage: number
@@ -32,13 +34,13 @@ type SomethingAction = {
   }
 } */
 
-type StagesAction = {
-  type: string
+/* type StagesAction = {
+  type: typeof INCREMENT_STAGE
   stage: number
 }
 
 type GenderAction = {
-  type: string
+  type: typeof SET_GENDER
   gender: string
 }
 
@@ -47,5 +49,9 @@ type SomethingAction = {
   something: boolean
 }
 
-type DispatchType = (args: StagesAction) => StagesAction
+
+type CombinedType = StagesAction | GenderAction */
+
+
+type DispatchType = (args: any) => any
 //type DispatchType = (args: StagesAction | GenderAction) => StagesAction | GenderAction

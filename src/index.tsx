@@ -5,13 +5,17 @@ import App from "./App";
 
 import { createStore, applyMiddleware, Store } from "redux"
 import thunk from "redux-thunk"
-import reducer from "./store/reducer"
+import rootReducer from "./store/reducer"
 import { Provider } from "react-redux"
 
 
-const store: Store<StagesState, StagesAction> & {
+import { CombinedType } from "../src/store/actionCreators"
+import { InitialStateType } from "../src/store/reducer"
+
+
+const store: Store<InitialStateType, CombinedType> & {
   dispatch: DispatchType
-} = createStore(reducer, applyMiddleware(thunk))
+} = createStore(rootReducer, applyMiddleware(thunk))
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
