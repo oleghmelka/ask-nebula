@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './Main_3.module.css';
 import { useSelector, shallowEqual } from "react-redux"
 
@@ -22,13 +22,18 @@ const Stage_3: React.FC<Props> = ({nextStage, stage, zodiac}) => {
     shallowEqual
   )
 
+  useEffect(() => {
+      const time = setTimeout(() => {
+        handleGoNext()
+      }, 4000)
+      return () => clearTimeout(time)
+    }, [])
+
   const handleGoNext = () => {
-    setTimeout(() => {
       nextStage(stage + 1)
-    }, 4000)
   }
 
-  handleGoNext()
+  
 
   return (
     <main className={styles.main}>
