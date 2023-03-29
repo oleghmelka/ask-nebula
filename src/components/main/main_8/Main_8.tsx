@@ -1,4 +1,5 @@
 import React from 'react'
+
 import styles from './Main_8.module.css';
 
 import heart from '../../../assets/heart.png'
@@ -14,13 +15,12 @@ type Props = {
   decisionSourse: string
 }
 
-const Stage_8: React.FC<Props> = ({previousStage, nextStage, stage, zodiac, decisionSourse}) => {
 
+const Stage_8: React.FC<Props> = ({previousStage, nextStage, stage, zodiac, decisionSourse}) => {
 
   const handleGoBack = () => {
     previousStage(stage - 1)
   }
-
 
   const handleGoNext = () => {
     nextStage(stage + 1)
@@ -41,7 +41,7 @@ const Stage_8: React.FC<Props> = ({previousStage, nextStage, stage, zodiac, deci
         decisionSourse === 'both' && (
           <div className={styles.wrapper}>
             <img src={both} alt="drawing comparing heart and mind"/>
-            <h1 className={styles.heading}> Based on our data, 39% of <span className={styles.heading && styles.span}>{zodiac} </span> people also make decisions with their head. But don't worry, we'll consider that while creating your guidance plan.</h1>
+            <h1 className={styles.heading}>Based on our data, 39% of <span className={styles.heading && styles.span}>{zodiac} </span> people also make decisions with their head. But don't worry, we'll consider that while creating your guidance plan.</h1>
           </div>
         )
       }

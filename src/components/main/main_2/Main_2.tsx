@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+
 import styles from './Main_2.module.css';
+
 
 type Props = {
   nextStage: (stage: number) => void
@@ -12,6 +14,7 @@ interface ZodiacSign {
   startDate: Date;
   endDate: Date;
 }
+
 
 const zodiacSigns: ZodiacSign[] = [
   { name: "Aquarius", startDate: new Date(0, 0, 21), endDate: new Date(0, 1, 19) },
@@ -29,6 +32,7 @@ const zodiacSigns: ZodiacSign[] = [
 ]
 
 const getZodiacSign = (date: Date): string | null => {
+
   const month = date.getMonth();
   const day = date.getDate();
 
@@ -60,7 +64,6 @@ const Stage_2: React.FC<Props>  = ({nextStage, stage, setCurrentZodiac, setCurre
     }
     nextStage(stage + 1)
   }
-
 
   const [day, setDay] = useState<number | null>(null);
   const [month, setMonth] = useState<number | null>(null);

@@ -1,11 +1,11 @@
 import React from 'react'
 import { Formik, Field, Form } from 'formik';
 import BasicFormSchema from '../../../utils/yup/yupSchema';
+
 import styles from './Main_9.module.css';
 
 
 const Stage_9: React.FC = () => {
-
 
   return (
     <main className={styles.main}>

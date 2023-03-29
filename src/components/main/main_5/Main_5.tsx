@@ -1,9 +1,12 @@
 import React from 'react'
-import styles from './Main_5.module.css';
-
 import { Dispatch } from "redux"
 import { useDispatch } from "react-redux"
+import { nanoid } from 'nanoid'
+
 import { setIsParent } from "../../../store/actionCreators"
+
+import styles from './Main_5.module.css';
+
 
 type Props = {
   nextStage: (stage: number) => void
@@ -12,6 +15,16 @@ type Props = {
 }
 
 const Stage_5: React.FC<Props> = ({nextStage, stage, status}) => {
+  
+  interface ButtonsType {
+    text: string;
+    value: boolean;
+  }
+
+  const buttons: ButtonsType[] = [
+    { text: 'Yes', value: true },
+    { text: 'No', value: false },
+  ];
 
   const dispatch: Dispatch<any> = useDispatch()
 
@@ -45,8 +58,11 @@ const Stage_5: React.FC<Props> = ({nextStage, stage, status}) => {
           <div className={styles.wrapper}>
             <h1 className={styles.heading}>Are you a single parent?</h1>
             <div className={styles.buttons}>
-              <button onClick={() => handleSetIsSingleParent(true)}>Yes</button>
-              <button onClick={() => handleSetIsSingleParent(false)}>No</button>
+              {
+                buttons.map((item) => (
+                  <button onClick={() => handleSetIsSingleParent(item.value)} key={nanoid()}>{item.text}</button>
+                ))
+              }
             </div>
           </div>)
       }
@@ -54,8 +70,11 @@ const Stage_5: React.FC<Props> = ({nextStage, stage, status}) => {
           <div className={styles.wrapper}>
             <h1 className={styles.heading}>Are you a parent?</h1>
             <div className={styles.buttons}>
-              <button onClick={() => handleSetIsParent(true)}>Yes</button>
-              <button onClick={() => handleSetIsParent(false)}>No</button>
+              {
+                buttons.map((item) => (
+                  <button onClick={() => handleSetIsParent(item.value)} key={nanoid()}>{item.text}</button>
+                ))
+              }
             </div>
           </div>
       }

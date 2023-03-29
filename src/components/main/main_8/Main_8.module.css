@@ -8,10 +8,6 @@
   transform: translate(-50%);
 }
 
-.wrapper {
-
-}
-
 .heading {
   color: var(--color-white-primary);
   font-family: var(--main-font);

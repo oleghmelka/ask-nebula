@@ -72,6 +72,7 @@ export type CombinedType = IncrementActionType | DecrementActionType |
                             DecisionSourseActionType | ZodiacActionType |
                             AgeActionType
 
+                            
 export const incrementStage =(stage: number):IncrementActionType => ({
   type: actionTypes.INCREMENT_STAGE,
   payload: {stage},

@@ -1,21 +1,32 @@
 import React from 'react'
-import styles from './Main_4.module.css';
 import { Dispatch } from "redux"
 import { useDispatch } from "react-redux"
+import { nanoid } from 'nanoid'
 
 import { setRelationshipStatus } from "../../../store/actionCreators"
+
+import styles from './Main_4.module.css';
+
 
 type Props = {
   nextStage: (stage: number) => void
   stage: number
 }
 
+
 const Stage_4: React.FC<Props> = ({nextStage, stage}) => {
 
-/*   const zodiac = useState<string>('strelets')
-  const gender = useState<string>('noone')
-*/
-const dispatch: Dispatch<any> = useDispatch()
+  const dispatch: Dispatch<any> = useDispatch()
+
+  interface ButtonsType {
+    text: string;
+    value: 'single' | 'in a relationship';
+  }
+
+  const buttons: ButtonsType[] = [
+    { text: 'Single', value: 'single' },
+    { text: 'In a relationship', value: 'in a relationship' },
+  ];
 
   const handleGoNext = () => {
     nextStage(stage + 1)
@@ -26,7 +37,7 @@ const dispatch: Dispatch<any> = useDispatch()
     [dispatch]
   )
 
-    const handleSetRelationshipStatus = (status: 'single' | 'in a relationship') => {
+  const handleSetRelationshipStatus = (status: 'single' | 'in a relationship') => {
     SettingRelationshipStatus(status)
     handleGoNext()
   }
@@ -35,8 +46,11 @@ const dispatch: Dispatch<any> = useDispatch()
     <main className={styles.main}>
       <h1 className={styles.heading}>So we can get to know you better, tell us about your relationship status.</h1>
       <div className={styles.buttons}>
-        <button onClick={() => handleSetRelationshipStatus('single')}>Single</button>
-        <button onClick={() => handleSetRelationshipStatus('in a relationship')}>In a relationship</button>
+        {
+          buttons.map((item) => (
+            <button onClick={() => handleSetRelationshipStatus(item.value)} key={nanoid()}>{item.text}</button>
+          ))
+        }
       </div>
     </main>
   )

@@ -1,16 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-
 import { createStore, applyMiddleware, Store } from "redux"
 import thunk from "redux-thunk"
-import rootReducer from "./store/reducer"
 import { Provider } from "react-redux"
-
 
 import { CombinedType } from "../src/store/actionCreators"
 import { InitialStateType } from "../src/store/reducer"
+import rootReducer from "./store/reducer"
+import App from "./App";
+
+import "./index.css";
 
 
 const store: Store<InitialStateType, CombinedType> & {

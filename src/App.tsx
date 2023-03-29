@@ -20,6 +20,7 @@ import Main_7 from "./components/main/main_7/Main_7";
 import Main_8 from "./components/main/main_8/Main_8";
 import Main_9 from "./components/main/main_9/Main_9";
 
+
 function App() {
 
   const stage: number = useSelector(
@@ -64,6 +65,7 @@ function App() {
 
 
   const dispatch: Dispatch<any> = useDispatch()
+
 
   const previousStage = React.useCallback(
     (stage: number) => dispatch(decrementStage(stage)),
@@ -120,6 +122,7 @@ function App() {
     }
   }
 
+  
   return (
     <div className={clsx('app', {'app-background': stage === 3 || stage === 8})}>
       <div className="workzone">

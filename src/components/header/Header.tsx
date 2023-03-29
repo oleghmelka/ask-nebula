@@ -1,12 +1,16 @@
 import React from 'react'
+
+import styles from './Header.module.css';
+
 import logo from '../../assets/logo.png'
 import arrow from '../../assets/arrow.png'
-import styles from './Header.module.css';
+
 
 type HeaderType = {
   stage: number
   previousStage: (stage: number) => void
 }
+
 
 const Header = ({stage, previousStage}: HeaderType) => {
   

@@ -1,13 +1,14 @@
 import React from 'react'
-import styles from './Main_1.module.css';
-
 import { Dispatch } from "redux"
 import { useDispatch } from "react-redux"
+
 import { setGender } from "../../../store/actionCreators"
+
+import styles from './Main_1.module.css';
 
 import male from '../../../assets/male.png'
 import female from '../../../assets/female.png'
-import arrow from '../../../assets/arrow.png'
+
 
 type Props = {
   nextStage: (stage: number) => void
@@ -17,7 +18,6 @@ type Props = {
 const Stage_1: React.FC<Props> = ({nextStage, stage}) => {
 
   const dispatch: Dispatch<any> = useDispatch()
-
 
   const handleGoNext = () => {
     nextStage(stage + 1)
@@ -32,7 +32,7 @@ const Stage_1: React.FC<Props> = ({nextStage, stage}) => {
     SettingGender(someGender)
     handleGoNext()
   }
-  {arrow}
+  
   return (
     <main className={styles.main}>
       <h1 className={styles.heading}>Understand Yourself and Improve Relationships With Astrology</h1>

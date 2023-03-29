@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
-import styles from './Main_3.module.css';
 import { useSelector, shallowEqual } from "react-redux"
+
+import styles from './Main_3.module.css';
 
 
 type Props = {
@@ -8,6 +9,7 @@ type Props = {
   stage: number
   zodiac: string | null
 }
+
 
 const Stage_3: React.FC<Props> = ({nextStage, stage, zodiac}) => {
 
@@ -22,17 +24,16 @@ const Stage_3: React.FC<Props> = ({nextStage, stage, zodiac}) => {
     shallowEqual
   )
 
-  useEffect(() => {
-      const time = setTimeout(() => {
-        handleGoNext()
-      }, 4000)
-      return () => clearTimeout(time)
-    }, [])
-
   const handleGoNext = () => {
       nextStage(stage + 1)
   }
 
+  useEffect(() => {
+    const time = setTimeout(() => {
+      handleGoNext()
+    }, 4000)
+    return () => clearTimeout(time)
+  }, [])
   
 
   return (

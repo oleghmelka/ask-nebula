@@ -1,9 +1,12 @@
 import React from 'react'
+
 import styles from './Footer.module.css';
+
 
 type IFooter = {
   stage: number
 }
+
 
 const Footer = ({stage}: IFooter) => {
 

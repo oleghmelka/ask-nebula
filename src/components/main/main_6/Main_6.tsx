@@ -1,5 +1,8 @@
 import React from 'react'
+import { nanoid } from 'nanoid'
+
 import styles from './Main_6.module.css';
+
 
 type Props = {
   nextStage: (stage: number) => void
@@ -12,6 +15,19 @@ type Props = {
 }
 
 const Stage_6: React.FC<Props> = ({nextStage, stage, status, gender, age, isParent, isSingleParent}) => {
+
+  const buttonsSingleParent: Array<string> = [
+    'I was unhappy with low things were going in my relationship',
+    'I was unhappy with parts of my relationship, but some thing were working',
+    'I was generally happy with my relationship',
+    'I’ve never been in a relationship'
+   ]
+
+  const buttonsParent: Array<string> = [
+    'I’ve never been in a relationship',
+    'I’m unhappy with parts of my relationship, but some things are working well',
+    'I’m generally happy in my relationship'
+  ]
 
   const handleGoNext = () => {
     nextStage(stage + 1)
@@ -27,9 +43,11 @@ const Stage_6: React.FC<Props> = ({nextStage, stage, status, gender, age, isPare
               to improve their relationship. Which statement best describes you?`}
             </h1>
             <div className={styles.buttons}>
-              <button onClick={handleGoNext}>I’ve never been in a relationship</button>
-              <button onClick={handleGoNext}>I’m unhappy with parts of my relationship, but some things are working well</button>
-              <button onClick={handleGoNext}>I’m generally happy in my relationship</button>
+                {
+                  buttonsParent.map((item) => (
+                    <button onClick={handleGoNext} key={nanoid()}>{item}</button>
+                  ))
+                }
             </div>
           </div>
         )}
@@ -41,10 +59,11 @@ const Stage_6: React.FC<Props> = ({nextStage, stage, status, gender, age, isPare
               their perfect partner. But first, how did you feel in your last relationship?`}
             </h1>
             <div className={styles.buttons}>
-              <button onClick={handleGoNext}>I was unhappy with low things were going in my relationship</button>
-              <button onClick={handleGoNext}>I was unhappy with parts of my relationship, but some thing were working</button>
-              <button onClick={handleGoNext}>I was generally happy with my relationship</button>
-              <button onClick={handleGoNext}>I’ve never been in a relationship</button>
+              {
+                buttonsSingleParent.map((item) => (
+                  <button onClick={handleGoNext} key={nanoid()}>{item}</button>
+                ))
+              }
             </div>
           </div>
       )}

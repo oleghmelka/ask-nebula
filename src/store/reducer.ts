@@ -11,7 +11,6 @@ export type InitialStateType = {
   isParent: boolean
   isSingleParent: boolean
   decisionSourse: 'heart' | 'head' | 'both'
-  
 }
 
 const initialState: InitialStateType = {
@@ -30,7 +29,6 @@ export const rootReducer = (
   state = initialState,
   action: CombinedType
 ): InitialStateType => {
-
 
   switch (action.type) {
     
@@ -71,33 +69,31 @@ export const rootReducer = (
 
     case actionTypes.SET_STATUS: 
 
-    return {
-      ...state,
-      status: action.payload.status,
-    }
+      return {
+        ...state,
+        status: action.payload.status,
+      }
 
     case actionTypes.SET_IS_PARENT: 
 
-    return {
-      ...state,
-      isParent: action.payload.isParent,
-    }
+      return {
+        ...state,
+        isParent: action.payload.isParent,
+      }
 
-    
     case actionTypes.SET_IS_SINGLE_PARENT: 
 
-    return {
-      ...state,
-      isSingleParent: action.payload.isSingleParent,
-    }
+      return {
+        ...state,
+        isSingleParent: action.payload.isSingleParent,
+      }
 
     case actionTypes.SET_DECISION_SOURSE: 
 
-    return {
-      ...state,
-      decisionSourse: action.payload.decisionSourse,
-    }
-
+      return {
+        ...state,
+        decisionSourse: action.payload.decisionSourse,
+      }
   }
 
   return state

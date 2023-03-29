@@ -1,9 +1,12 @@
 import React from 'react'
-import styles from './Main_7.module.css';
-
 import { Dispatch } from "redux"
 import { useDispatch } from "react-redux"
+import { nanoid } from 'nanoid'
+
 import { setDecisionSourse } from "../../../store/actionCreators"
+
+import styles from './Main_7.module.css';
+
 
 type Props = {
   nextStage: (stage: number) => void
@@ -11,6 +14,17 @@ type Props = {
 }
 
 const Stage_7: React.FC<Props> = ({nextStage, stage}) => {
+
+  interface ButtonsType {
+    text: string;
+    value: 'heart' | 'head' | 'both';
+  }
+
+  const buttons: ButtonsType[] = [
+    { text: 'Heart', value: 'heart' },
+    { text: 'Head', value: 'head' },
+    { text: 'Both', value: 'both' },
+  ];
 
   const dispatch: Dispatch<any> = useDispatch()
 
@@ -32,9 +46,11 @@ const Stage_7: React.FC<Props> = ({nextStage, stage}) => {
     <main className={styles.main}>
       <h1 className={styles.heading}>Do you make decisions with your head or your heart?</h1>
       <div className={styles.buttons}>
-        <button onClick={() => handleSetDecisionSourse('heart')}>Heart</button>
-        <button onClick={() => handleSetDecisionSourse('head')}>Head</button>
-        <button onClick={() => handleSetDecisionSourse('both')}>Both</button>
+        {
+          buttons.map((item) => (
+            <button onClick={() => handleSetDecisionSourse(item.value)} key={nanoid()}>{item.text}</button>
+          ))
+        }
       </div>
     </main>
   )
