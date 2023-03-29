@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import logo from '../../assets/logo.png'
 import arrow from '../../assets/arrow.png'
 import styles from './Header.module.css';
