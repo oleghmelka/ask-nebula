@@ -48,12 +48,24 @@
   margin: 0 0 87px 0;
 }
 
+
 .buttons button:first-child{
   background: inherit;
   color: var(--color-white-primary);
+}
+
+.buttons button:first-child:active, .buttons button:first-child:hover{
+  background: var(--color-white-primary);
+  color: var(--color-violet-saturated);
 }
 
 .buttons button:last-child{
   background: var(--color-white-primary);
   color: var(--color-violet-saturated);
 }
+
+.buttons button:last-child:active, .buttons button:last-child:hover{
+  background: inherit;
+  color: var(--color-white-primary);
+}
+

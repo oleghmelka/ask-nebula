@@ -73,6 +73,22 @@
   background: #454895;
 }
 
+.male button:hover {
+  background: var(--color-gradient-secondary);
+}
+
+.male button:active {
+  background: #454895;
+}
+
 .female button {
+  background: var(--color-gradient-secondary);
+}
+
+.female button:hover {
+  background: #454895;
+}
+
+.male button:active {
   background: var(--color-gradient-secondary);
 }

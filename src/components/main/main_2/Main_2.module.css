@@ -78,3 +78,11 @@
   cursor: pointer;
   margin: 0 0 180px 0;
 }
+
+.main button:hover {
+  background: var(--color-gradient-secondary);
+}
+
+.main button:active {
+  background: var(--color-gradient-primary);
+}

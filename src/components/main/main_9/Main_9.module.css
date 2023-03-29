@@ -76,3 +76,10 @@
   padding: 12px 20px;
   margin: 50px 0 170px 0;
 }
+.formButton:hover{
+  background: var(--color-gradient-secondary);
+}
+
+.formButton:active{
+  background: var(--color-gradient-primary);
+}

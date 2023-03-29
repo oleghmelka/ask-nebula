@@ -40,6 +40,10 @@
   margin: 0 0 262px 0;
 }
 
+.buttons button:active, .buttons button:hover{
+  background: var(--color-gradient-primary);
+}
+
 .buttons button:first-child {
   margin: 0 0 20px 0;
 }

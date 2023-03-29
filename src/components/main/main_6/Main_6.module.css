@@ -39,6 +39,10 @@
   margin: 0 0 20px 0;
 }
 
+.buttons button:active, .buttons button:hover{
+  background: var(--color-gradient-primary);
+}
+
 .buttons button:last-child{
   margin: 0 0 66px 0;
 }
