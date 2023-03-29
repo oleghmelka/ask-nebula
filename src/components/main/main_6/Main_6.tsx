@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import styles from './Stage_6.module.css';
+import styles from './Main_6.module.css';
 
 type Props = {
   nextStage: (stage: number) => void
@@ -13,6 +13,9 @@ type Props = {
 
 const Stage_6: React.FC<Props> = ({nextStage, stage, status, gender, age, isParent, isSingleParent}) => {
 
+  console.log('AAAAA', gender)
+  console.log('BBBBB', status)
+
   const handleGoNext = () => {
     nextStage(stage + 1)
   } 
@@ -23,8 +26,8 @@ const Stage_6: React.FC<Props> = ({nextStage, stage, status, gender, age, isPare
           // in figma it part in the bottom
           <div className={styles.wrapper}>
             <h1 className={styles.heading}>
-              `${gender} ${age} ${isParent || isSingleParent && 'who have children'} need a slightly different approach 
-              to improve their relationship. Which statement best describes you?`
+              {`${gender} ${age} ${(isParent || isSingleParent) ? 'who have children' : 'who haven`t children'} need a slightly different approach 
+              to improve their relationship. Which statement best describes you?`}
             </h1>
             <div className={styles.buttons}>
               <button onClick={handleGoNext}>I’ve never been in a relationship</button>
@@ -37,8 +40,8 @@ const Stage_6: React.FC<Props> = ({nextStage, stage, status, gender, age, isPare
           // in figma it part in the top
           <div className={styles.wrapper}>
             <h1 className={styles.heading}>
-              `Single ${gender} ${age} ${isParent || isSingleParent && 'who have children'} need a slightly different approach to find
-              their perfect partner. But first, how did you feel in your last relationship?``
+              {`Single ${gender} ${age} ${(isParent || isSingleParent) ? 'who have children' : 'who haven`t children'} need a slightly different approach to find
+              their perfect partner. But first, how did you feel in your last relationship?`}
             </h1>
             <div className={styles.buttons}>
               <button onClick={handleGoNext}>I was unhappy with low things were going in my relationship</button>

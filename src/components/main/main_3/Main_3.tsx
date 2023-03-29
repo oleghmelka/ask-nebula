@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import styles from './Stage_3.module.css';
+import styles from './Main_3.module.css';
 import { useSelector, shallowEqual, useDispatch } from "react-redux"
 
 
@@ -7,7 +7,7 @@ import { useSelector, shallowEqual, useDispatch } from "react-redux"
 type Props = {
   nextStage: (stage: number) => void
   stage: number
-  zodiac: string
+  zodiac: string | null
 }
 
 const Stage_3: React.FC<Props> = ({nextStage, stage, zodiac}) => {

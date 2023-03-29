@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
-import styles from './Stage_5.module.css';
+import styles from './Main_5.module.css';
 
 import { Dispatch } from "redux"
 import { useSelector, shallowEqual, useDispatch } from "react-redux"
-import { setIsParent, setIsSingleParent } from "../../store/actionCreators"
+import { setIsParent, setIsSingleParent } from "../../../store/actionCreators"
 
 type Props = {
   nextStage: (stage: number) => void

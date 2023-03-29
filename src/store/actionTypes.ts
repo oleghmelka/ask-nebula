@@ -1,9 +1,12 @@
 export const INCREMENT_STAGE = "INCREMENT_STAGE"
 export const DECREMENT_STAGE = "DECREMENT_STAGE"
 export const SET_GENDER = "SET_GENDER"
+export const SET_ZODIAC = "SET_ZODIAC"
+export const SET_AGE = "SET_AGE"
 export const SET_STATUS = "SET_STATUS"
 export const SET_IS_PARENT = "SET_IS_PARENT"
 export const SET_IS_SINGLE_PARENT = "SET_IS_SINGLE_PARENT"
 export const SET_DECISION_SOURSE = "SET_DECISION_SOURSE"
+
 
 

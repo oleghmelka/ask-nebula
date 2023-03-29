@@ -23,6 +23,20 @@ type GenderActionType = {
   }
 }
 
+type ZodiacActionType = {
+  type: typeof actionTypes.SET_ZODIAC
+  payload: {
+     zodiac: string | null
+  }
+}
+
+type AgeActionType = {
+  type: typeof actionTypes.SET_AGE
+  payload: {
+    age: number
+  }
+}
+
 type RaltionshipStatusActionType = {
   type: typeof actionTypes.SET_STATUS
   payload: {
@@ -55,7 +69,8 @@ type DecisionSourseActionType = {
 export type CombinedType = IncrementActionType | DecrementActionType | 
                             GenderActionType | RaltionshipStatusActionType |
                             IsParentActionType | IsSingleParentActionType |
-                            DecisionSourseActionType
+                            DecisionSourseActionType | ZodiacActionType |
+                            AgeActionType
 
 export const incrementStage =(stage: number):IncrementActionType => ({
   type: actionTypes.INCREMENT_STAGE,
@@ -70,6 +85,16 @@ export const decrementStage =(stage: number):DecrementActionType => ({
 export const setGender = (gender: string):GenderActionType => ({
   type: actionTypes.SET_GENDER,
   payload: {gender},
+})
+
+export const setZodiac = (zodiac: string | null):ZodiacActionType => ({
+  type: actionTypes.SET_ZODIAC,
+  payload: {zodiac},
+})
+
+export const setAge = (age: number):AgeActionType => ({
+  type: actionTypes.SET_AGE,
+  payload: {age},
 })
 
 export const setRelationshipStatus = (status: 'single' | 'in a relationship'):RaltionshipStatusActionType => ({

@@ -1,9 +1,12 @@
 import React from 'react'
-import styles from './Stage_1.module.css';
+import styles from './Main_1.module.css';
 
 import { Dispatch } from "redux"
 import { useSelector, shallowEqual, useDispatch } from "react-redux"
-import { setGender } from "../../store/actionCreators"
+import { setGender } from "../../../store/actionCreators"
+
+import male from '../../../assets/male.png'
+import female from '../../../assets/female.png'
 
 type Props = {
   nextStage: (stage: number) => void
@@ -36,11 +39,11 @@ const Stage_1: React.FC<Props> = ({nextStage, stage}) => {
       <h5 className={styles.subheading}>Select your gender:</h5>
       <div className={styles.imageWrapper}>
         <div className={styles.male}>
-          <img src='' />
+          <img src={male} />
           <button onClick={() => handleSetGender('male')}>Male</button>
         </div>
         <div className={styles.female}>
-          <img src='' />
+          <img src={female} />
           <button onClick={() => handleSetGender('female')}>Female</button>
         </div>
       </div>

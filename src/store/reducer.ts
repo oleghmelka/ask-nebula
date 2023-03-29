@@ -5,23 +5,25 @@ import {CombinedType} from "../store/actionCreators"
 export type InitialStateType = {
   stage: number
   gender: string
+  zodiac: string | null
   age: number
   status: 'single' | 'in a relationship'
   isParent: boolean
   isSingleParent: boolean
   decisionSourse: 'heart' | 'head' | 'both'
-  zodiac: string
+  
 }
 
 const initialState: InitialStateType = {
   stage: 1,
   gender: '',
+  zodiac: '',
   age: 0,
   status: 'single',
   isParent: false,
   isSingleParent: false,
   decisionSourse: 'heart',
-  zodiac: 'lion'
+  
 }
 
 export const rootReducer = (
@@ -29,7 +31,6 @@ export const rootReducer = (
   action: CombinedType
 ): InitialStateType => {
 
-  console.log('action', action.payload)
 
   switch (action.type) {
     
@@ -54,11 +55,25 @@ export const rootReducer = (
         gender: action.payload.gender,
       }
 
+    case actionTypes.SET_ZODIAC: 
+
+      return {
+        ...state,
+        zodiac: action.payload.zodiac,
+      }
+
+    case actionTypes.SET_AGE: 
+
+      return {
+        ...state,
+        age: action.payload.age,
+      }
+
     case actionTypes.SET_STATUS: 
 
     return {
       ...state,
-      gender: action.payload.status,
+      status: action.payload.status,
     }
 
     case actionTypes.SET_IS_PARENT: 
@@ -90,6 +105,4 @@ export const rootReducer = (
 
 export default rootReducer
 
-//type RootReducerType = typeof rootReducer
-//export type AppStateType = ReturnType<RootReducerType>
 

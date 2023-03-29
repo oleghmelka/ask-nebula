@@ -1,16 +1,16 @@
 import React, {useState} from 'react'
-import styles from './Stage_8.module.css';
+import styles from './Main_8.module.css';
 
-import heart from '../../assets/heart.png'
-import both from '../../assets/both.png'
-import head from '../../assets/head.png'
+import heart from '../../../assets/heart.png'
+import both from '../../../assets/both.png'
+import head from '../../../assets/head.png'
 
 
 type Props = {
   previousStage: (stage: number) => void
   nextStage: (stage: number) => void
   stage: number
-  zodiac: string
+  zodiac: string | null
   decisionSourse: string
 }
 
@@ -33,8 +33,8 @@ const Stage_8: React.FC<Props> = ({previousStage, nextStage, stage, zodiac, deci
           <div className={styles.wrapper}>
             <img src={heart} />
             <h1 className={styles.heading}>
-              `Based on our data, 49% of ${zodiac} people also make decisions with their heart. 
-              But don't worry, we'll consider that while creating your guidance plan.`
+              {`Based on our data, 49% of ${zodiac} people also make decisions with their heart. 
+              But don't worry, we'll consider that while creating your guidance plan.`}
             </h1>
           </div>
         )
@@ -44,8 +44,8 @@ const Stage_8: React.FC<Props> = ({previousStage, nextStage, stage, zodiac, deci
           <div className={styles.wrapper}>
             <img src={both} />
             <h1 className={styles.heading}>
-              `Based on our data, 39% of ${zodiac} people also make decisions with their head. But don't worry, 
-              we'll consider that while creating your guidance plan.`
+              {`Based on our data, 39% of ${zodiac} people also make decisions with their head. But don't worry, 
+              we'll consider that while creating your guidance plan.`}
             </h1>
           </div>
         )
@@ -55,8 +55,8 @@ const Stage_8: React.FC<Props> = ({previousStage, nextStage, stage, zodiac, deci
           <div className={styles.wrapper}>
             <img src={head} />
             <h1 className={styles.heading}>
-            `Based on our data, only the top 17% of ${zodiac} people make decisions with their heart and head. 
-            Using both in equal measure is the key to feeling harmonious in your relationships.`
+              {`Based on our data, only the top 17% of ${zodiac} people make decisions with their heart and head. 
+              Using both in equal measure is the key to feeling harmonious in your relationships.`}
             </h1>
           </div>
         )
