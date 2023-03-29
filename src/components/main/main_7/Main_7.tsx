@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styles from './Main_7.module.css';
 
 import { Dispatch } from "redux"
-import { useSelector, shallowEqual, useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
 import { setDecisionSourse } from "../../../store/actionCreators"
 
 type Props = {
@@ -29,7 +29,7 @@ const Stage_7: React.FC<Props> = ({nextStage, stage}) => {
   }
 
   return (
-    <main>
+    <main className={styles.main}>
       <h1 className={styles.heading}>Do you make decisions with your head or your heart?</h1>
       <div className={styles.buttons}>
         <button onClick={() => handleSetDecisionSourse('heart')}>Heart</button>

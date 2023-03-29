@@ -46,33 +46,20 @@ const getZodiacSign = (date: Date): string | null => {
 
 const Stage_2: React.FC<Props>  = ({nextStage, stage, setCurrentZodiac, setCurrentAge}) => {
 
-
-  const [birthdate, setBirthdate] = useState<Date | null>(null)
-
   const handleDateChange = () => {
-    //const date = new Date(event.target.value);
+
     if (day !== null && month !== null && year !== null) {
       const dateOfBirth = new Date(year, month - 1, day);
-      const birthDate = new Date(year, month - 1, day);
       const today = new Date()
-
       const ageInMs = today.getTime() - dateOfBirth.getTime();
       const ageInYears = ageInMs / (1000 * 60 * 60 * 24 * 365.25);
-
       const currentZodiac = getZodiacSign(dateOfBirth)
       
       setCurrentZodiac(currentZodiac)
       setCurrentAge(Math.floor(ageInYears))
-
-      console.log('currentZodiac', currentZodiac)
-      console.log('Math.floor(ageInYears)', Math.floor(ageInYears))
     }
     nextStage(stage + 1)
   }
-
-
-
-
 
 
   const [day, setDay] = useState<number | null>(null);
@@ -95,12 +82,12 @@ const Stage_2: React.FC<Props>  = ({nextStage, stage, setCurrentZodiac, setCurre
   };
 
   return (
-    <main>
+    <main className={styles.main}>
       <h1 className={styles.subheading}>Your profile</h1>
       <p className={styles.heading}>What time were you born?</p>
       <h5 className={styles.text}>We use NASA data to identify the exact position of the planets in the sky at the time of your birth.</h5>
 
-      <div>
+      <div className={styles.birthdate}>
         <select id="day" onChange={handleDayChange}>
           <option value="">12</option>
           {Array.from({ length: 31 }, (_, i) => i + 1).map((day) => (
@@ -128,11 +115,6 @@ const Stage_2: React.FC<Props>  = ({nextStage, stage, setCurrentZodiac, setCurre
           ))}
         </select>
       </div>
-
-
-
-
-
 
       <button onClick={handleDateChange}>Next</button>
     </main>

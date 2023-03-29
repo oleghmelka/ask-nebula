@@ -1,6 +1,7 @@
 import * as React from "react"
 import { useSelector, shallowEqual, useDispatch } from "react-redux"
 import { Dispatch } from "redux"
+import clsx from 'clsx';
 
 import { incrementStage, decrementStage, setZodiac, setAge } from "./store/actionCreators"
 import { InitialStateType } from "../src/store/reducer"
@@ -112,16 +113,15 @@ function App() {
           return <Main_8 nextStage={nextStage} stage={stage} previousStage={previousStage} zodiac={zodiac} decisionSourse={decisionSourse} />
       
       case 9:
-          return <Main_9 nextStage={nextStage} stage={stage} variant="string" />
+          return <Main_9 />
     
       default:
         <main>Main content</main>
     }
   }
 
-
   return (
-    <div className="App">
+    <div className={clsx('app', {'app-background': stage === 3 || stage === 8})}>
       <div className="workzone">
         <Header stage={stage} previousStage={previousStage}/>
         { mainBlock() }

@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styles from './Main_4.module.css';
 import { Dispatch } from "redux"
-import { useSelector, shallowEqual, useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
 
 import { setRelationshipStatus } from "../../../store/actionCreators"
 
@@ -32,7 +32,7 @@ const dispatch: Dispatch<any> = useDispatch()
   }
 
   return (
-    <main>
+    <main className={styles.main}>
       <h1 className={styles.heading}>So we can get to know you better, tell us about your relationship status.</h1>
       <div className={styles.buttons}>
         <button onClick={() => handleSetRelationshipStatus('single')}>Single</button>

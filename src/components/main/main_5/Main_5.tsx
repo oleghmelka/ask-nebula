@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styles from './Main_5.module.css';
 
 import { Dispatch } from "redux"
-import { useSelector, shallowEqual, useDispatch } from "react-redux"
-import { setIsParent, setIsSingleParent } from "../../../store/actionCreators"
+import { useDispatch } from "react-redux"
+import { setIsParent } from "../../../store/actionCreators"
 
 type Props = {
   nextStage: (stage: number) => void
@@ -40,7 +40,7 @@ const Stage_5: React.FC<Props> = ({nextStage, stage, status}) => {
   }
 
   return (
-    <main>
+    <main className={styles.main}>
       { status === 'single' && (
           <div className={styles.wrapper}>
             <h1 className={styles.heading}>Are you a single parent?</h1>

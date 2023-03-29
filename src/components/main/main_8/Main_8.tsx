@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styles from './Main_8.module.css';
 
 import heart from '../../../assets/heart.png'
@@ -27,14 +27,12 @@ const Stage_8: React.FC<Props> = ({previousStage, nextStage, stage, zodiac, deci
   } 
 
   return (
-    <main>
+    <main className={styles.main}>
       {
         decisionSourse === 'heart' && (
           <div className={styles.wrapper}>
-            <img src={heart} />
-            <h1 className={styles.heading}>
-              {`Based on our data, 49% of ${zodiac} people also make decisions with their heart. 
-              But don't worry, we'll consider that while creating your guidance plan.`}
+            <img src={heart} alt="drawing comparing heart and mind"/>
+            <h1 className={styles.heading}>Based on our data, 49% of <span className={styles.heading && styles.span}>{zodiac} </span> people also make decisions with their heart. But don't worry, we'll consider that while creating your guidance plan.
             </h1>
           </div>
         )
@@ -42,22 +40,16 @@ const Stage_8: React.FC<Props> = ({previousStage, nextStage, stage, zodiac, deci
       {
         decisionSourse === 'both' && (
           <div className={styles.wrapper}>
-            <img src={both} />
-            <h1 className={styles.heading}>
-              {`Based on our data, 39% of ${zodiac} people also make decisions with their head. But don't worry, 
-              we'll consider that while creating your guidance plan.`}
-            </h1>
+            <img src={both} alt="drawing comparing heart and mind"/>
+            <h1 className={styles.heading}> Based on our data, 39% of <span className={styles.heading && styles.span}>{zodiac} </span> people also make decisions with their head. But don't worry, we'll consider that while creating your guidance plan.</h1>
           </div>
         )
       }
       {
         decisionSourse === 'head' && (
           <div className={styles.wrapper}>
-            <img src={head} />
-            <h1 className={styles.heading}>
-              {`Based on our data, only the top 17% of ${zodiac} people make decisions with their heart and head. 
-              Using both in equal measure is the key to feeling harmonious in your relationships.`}
-            </h1>
+            <img src={head} alt="drawing comparing heart and mind"/>
+            <h1 className={styles.heading}>Based on our data, only the top 17% of <span className={styles.heading && styles.span}>{zodiac} </span> people make decisions with their heart and head. Using both in equal measure is the key to feeling harmonious in your relationships.</h1>
           </div>
         )
       }

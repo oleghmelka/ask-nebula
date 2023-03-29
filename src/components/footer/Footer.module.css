@@ -1,4 +1,22 @@
+.footer {
+  width: 330px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+
 .footer p {
+  color: var(--color-grey-footer);
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
   text-align: center;
   margin: 0;
 }
+
+/* .gradient{
+  color: #CDCDCD;
+}
+ */

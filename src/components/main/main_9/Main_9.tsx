@@ -1,19 +1,14 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Formik, Field, Form } from 'formik';
 import BasicFormSchema from '../../../utils/yup/yupSchema';
 import styles from './Main_9.module.css';
 
-type Props = {
-  nextStage: (stage: number) => void
-  stage: number
-  variant: string
-}
 
-const Stage_9: React.FC<Props> = ({nextStage, stage, variant}) => {
+const Stage_9: React.FC = () => {
 
 
   return (
-    <main>
+    <main className={styles.main}>
       <h1 className={styles.heading}>Enter your email to see how you can grow with Nebula</h1>
       <Formik
         initialValues={{
@@ -33,9 +28,9 @@ const Stage_9: React.FC<Props> = ({nextStage, stage, variant}) => {
               type="email"
             />
             { errors.email &&
-              touched.email && <div className="field-error">{errors.email}</div>}
+              touched.email && <div className={styles.fieldError}>{errors.email}</div>}
             <p className={styles.text}>*Nebula does not share any personal information. We'll email you a copy of your program for convenient access.</p>
-            <p className={styles.text}>By continuing I agree with Privacy policy and Terms of use.</p>
+            <p className={styles.text}>By continuing I agree with <span><a href='#'>Privacy policy</a></span> and <span><a href='#'>Terms of use</a></span>.</p>
             <button type="submit" className={styles.formButton}>Continue</button>
           </Form>
         )}

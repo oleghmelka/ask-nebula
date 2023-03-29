@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styles from './Main_6.module.css';
 
 type Props = {
@@ -13,15 +13,12 @@ type Props = {
 
 const Stage_6: React.FC<Props> = ({nextStage, stage, status, gender, age, isParent, isSingleParent}) => {
 
-  console.log('AAAAA', gender)
-  console.log('BBBBB', status)
-
   const handleGoNext = () => {
     nextStage(stage + 1)
   } 
 
   return (
-    <main>
+    <main className={styles.main}>
       { status === 'in a relationship' && (
           // in figma it part in the bottom
           <div className={styles.wrapper}>

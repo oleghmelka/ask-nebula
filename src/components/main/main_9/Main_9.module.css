@@ -1,0 +1,78 @@
+.main {
+  width: 330px;
+  text-align: center;
+  margin: 0;
+  padding: 20px 0 0;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.heading {
+  color: var(--color-black-secondary);
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0 0 30px 0;
+}
+
+
+
+.text {
+  color: var(--color-grey-text);
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  margin: 0 0 20px 0;
+}
+
+.text span a{
+  color: var(--color-violet-light);
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+}
+
+.formContainer input{
+  position: relative;
+  width: 100%;
+  color: var(--color-grey-input);
+  box-sizing: border-box;
+  border: 1px solid var(--color-grey-input);
+  border-radius: 20px;
+  padding: 9px 36px 9px 16px;
+  margin: 0 0 30px 0;
+}
+
+.fieldError {
+  position: relative;
+  top: -20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.formButton {
+  width: 100%;
+  background: var(--color-gradient-primary);
+  box-shadow: var(--button-shadow);
+  border: none;
+  border-radius: 16px;
+  color: #fff;
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  cursor: pointer;
+  padding: 12px 20px;
+  margin: 50px 0 170px 0;
+}

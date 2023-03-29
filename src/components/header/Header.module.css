@@ -1,7 +1,7 @@
-
 .header{
   display: flex;
   padding: 19px 10%;
+  position: relative;
 }
 
 .arrowWrapper {
@@ -10,7 +10,7 @@
 }
 
 .logoWrapper{
-  position: relative;
+  position: absolute;
   left: 50%;
   transform: translate(-50%);
 }
