@@ -3,7 +3,7 @@ import { Dispatch } from "redux"
 import { useDispatch } from "react-redux"
 import { nanoid } from 'nanoid'
 
-import { setDecisionSourse } from "../../../store/actionCreators"
+import { setDecisionSourse, CombinedType } from "../../../store/actionCreators"
 
 import styles from './Main_7.module.css';
 
@@ -26,7 +26,7 @@ const Stage_7: React.FC<Props> = ({nextStage, stage}) => {
     { text: 'Both', value: 'both' },
   ];
 
-  const dispatch: Dispatch<any> = useDispatch()
+  const dispatch: Dispatch<CombinedType> = useDispatch()
 
   const handleGoNext = () => {
     nextStage(stage + 1)

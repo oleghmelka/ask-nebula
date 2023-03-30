@@ -3,7 +3,7 @@ import { Dispatch } from "redux"
 import { useDispatch } from "react-redux"
 import { nanoid } from 'nanoid'
 
-import { setIsParent } from "../../../store/actionCreators"
+import { setIsParent, CombinedType } from "../../../store/actionCreators"
 
 import styles from './Main_5.module.css';
 
@@ -26,7 +26,7 @@ const Stage_5: React.FC<Props> = ({nextStage, stage, status}) => {
     { text: 'No', value: false },
   ];
 
-  const dispatch: Dispatch<any> = useDispatch()
+  const dispatch: Dispatch<CombinedType> = useDispatch()
 
   const handleGoNext = () => {
     nextStage(stage + 1)

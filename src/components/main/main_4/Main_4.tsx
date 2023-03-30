@@ -3,7 +3,7 @@ import { Dispatch } from "redux"
 import { useDispatch } from "react-redux"
 import { nanoid } from 'nanoid'
 
-import { setRelationshipStatus } from "../../../store/actionCreators"
+import { setRelationshipStatus, CombinedType } from "../../../store/actionCreators"
 
 import styles from './Main_4.module.css';
 
@@ -16,7 +16,7 @@ type Props = {
 
 const Stage_4: React.FC<Props> = ({nextStage, stage}) => {
 
-  const dispatch: Dispatch<any> = useDispatch()
+  const dispatch: Dispatch<CombinedType> = useDispatch()
 
   interface ButtonsType {
     text: string;

@@ -2,7 +2,7 @@ import React from 'react'
 import { Dispatch } from "redux"
 import { useDispatch } from "react-redux"
 
-import { setGender } from "../../../store/actionCreators"
+import { setGender, CombinedType } from "../../../store/actionCreators"
 
 import styles from './Main_1.module.css';
 
@@ -17,7 +17,7 @@ type Props = {
 
 const Stage_1: React.FC<Props> = ({nextStage, stage}) => {
 
-  const dispatch: Dispatch<any> = useDispatch()
+  const dispatch: Dispatch<CombinedType> = useDispatch()
 
   const handleGoNext = () => {
     nextStage(stage + 1)

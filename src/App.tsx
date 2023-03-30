@@ -3,7 +3,7 @@ import { useSelector, shallowEqual, useDispatch } from "react-redux"
 import { Dispatch } from "redux"
 import clsx from 'clsx';
 
-import { incrementStage, decrementStage, setZodiac, setAge } from "./store/actionCreators"
+import { incrementStage, decrementStage, setZodiac, setAge, CombinedType } from "./store/actionCreators"
 import { InitialStateType } from "../src/store/reducer"
 
 import "./App.css";
@@ -64,7 +64,7 @@ function App() {
   )
 
 
-  const dispatch: Dispatch<any> = useDispatch()
+  const dispatch: Dispatch<CombinedType> = useDispatch()
 
 
   const previousStage = React.useCallback(

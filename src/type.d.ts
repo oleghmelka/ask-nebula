@@ -1,1 +1,3 @@
-type DispatchType = (args: any) => any
+import { CombinedType } from "./store/actionCreators"
+
+type DispatchType = (args: CombinedType) => CombinedType
