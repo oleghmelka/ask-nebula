@@ -92,7 +92,7 @@ const Stage_2: React.FC<Props>  = ({nextStage, stage, setCurrentZodiac, setCurre
 
       <div className={styles.birthdate}>
         <select id="day" onChange={handleDayChange}>
-          <option value="">12</option>
+          <option value="">---</option>
           {Array.from({ length: 31 }, (_, i) => i + 1).map((day) => (
             <option key={day} value={day}>
               {day}
@@ -101,7 +101,7 @@ const Stage_2: React.FC<Props>  = ({nextStage, stage, setCurrentZodiac, setCurre
         </select>
 
         <select id="month" onChange={handleMonthChange}>
-          <option value="">6</option>
+          <option value="">---</option>
           {Array.from({ length: 12 }, (_, i) => i + 1).map((month) => (
             <option key={month} value={month}>
               {month}
@@ -110,7 +110,7 @@ const Stage_2: React.FC<Props>  = ({nextStage, stage, setCurrentZodiac, setCurre
         </select>
 
         <select id="year" onChange={handleYearChange}>
-          <option value="">1993</option>
+          <option value="">---</option>
           {Array.from({ length: 123 }, (_, i) => 1900 + i).map((year) => (
             <option key={year} value={year}>
               {year}

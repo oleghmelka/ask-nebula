@@ -1,5 +1,6 @@
 {
   "name": "nebula",
+  "homepage": "./",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -28,7 +29,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .ts",
-    "build && start": "react-scripts start react-scripts build"
+    "build-and-start": "npm run build && npm run start"
   },
   "eslintConfig": {
     "extends": [
