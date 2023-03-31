@@ -3,7 +3,9 @@ import React from 'react'
 import styles from './Header.module.css';
 
 import logo from '../../assets/logo.png'
+import logo_white from '../../assets/logo.png' // it is impossible to download from Figma in png or jpg format, only in zip
 import arrow from '../../assets/arrow.png'
+import arrow_white from '../../assets/arrow.png' // it is impossible to download from Figma in png or jpg format, only in zip
 
 
 type HeaderType = {
@@ -25,12 +27,22 @@ const Header = ({stage, previousStage}: HeaderType) => {
         null
       : 
       <div className={styles.arrowWrapper}>
-        <img src={arrow} className={styles.arrow} onClick={handleGoBack} />
+        { stage === 3 || stage === 8 
+        ?
+          <img src={arrow_white} className={styles.arrow} onClick={handleGoBack} />
+        :
+          <img src={arrow} className={styles.arrow} onClick={handleGoBack} />
+        }
       </div> 
     }
 
       <div className={styles.logoWrapper}>
-        <img src={logo} className={styles.logo} />
+        { stage === 3 || stage === 8 
+        ?
+          <img src={logo_white} className={styles.logo} />
+        :
+          <img src={logo} className={styles.logo} />
+        }
       </div>
     </header>
   )

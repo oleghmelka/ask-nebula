@@ -3,12 +3,12 @@ import React from 'react'
 import styles from './Footer.module.css';
 
 
-type IFooter = {
+type FooterType = {
   stage: number
 }
 
 
-const Footer = ({stage}: IFooter) => {
+const Footer = ({stage}: FooterType) => {
 
   const darkTheme = stage === 3 || stage === 8
   const whiteTheme = stage === 2 || stage === 4 || stage === 5 || stage === 6 || stage === 7 || stage === 9 

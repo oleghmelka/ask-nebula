@@ -40,7 +40,7 @@
 .formContainer input{
   position: relative;
   width: 100%;
-  color: var(--color-grey-input);
+  color: #4E4E4E;
   box-sizing: border-box;
   border: 1px solid var(--color-grey-input);
   border-radius: 20px;

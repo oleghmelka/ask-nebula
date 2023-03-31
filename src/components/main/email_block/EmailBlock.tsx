@@ -18,9 +18,10 @@ const EmailBlock: React.FC<Props> = ({ setCurrentEmail }) => {
           email: '',
         }}
         validationSchema={BasicFormSchema}
-        onSubmit={values => {
+        onSubmit={(values, {resetForm}) => {
           setTimeout(() => {
             setCurrentEmail(values.email);
+            resetForm()
           }, 500);
         }}
         render={({ errors, touched }) => (
