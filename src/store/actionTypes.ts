@@ -7,6 +7,7 @@ export const SET_STATUS = "SET_STATUS"
 export const SET_IS_PARENT = "SET_IS_PARENT"
 export const SET_IS_SINGLE_PARENT = "SET_IS_SINGLE_PARENT"
 export const SET_DECISION_SOURSE = "SET_DECISION_SOURSE"
+export const SET_EMAIL = "SET_EMAIL"
 
 
 

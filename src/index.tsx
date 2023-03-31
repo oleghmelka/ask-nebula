@@ -11,6 +11,7 @@ import App from "./App";
 
 import "./index.css";
 
+type DispatchType = (args: CombinedType) => CombinedType
 
 const store: Store<InitialStateType, CombinedType> & {
   dispatch: DispatchType

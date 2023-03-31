@@ -3,7 +3,7 @@ import { useSelector, shallowEqual, useDispatch } from "react-redux"
 import { Dispatch } from "redux"
 import clsx from 'clsx';
 
-import { incrementStage, decrementStage, setZodiac, setAge, CombinedType } from "./store/actionCreators"
+import { incrementStage, decrementStage, setZodiac, setAge, setEmail, CombinedType } from "./store/actionCreators"
 import { InitialStateType } from "../src/store/reducer"
 
 import "./App.css";
@@ -87,6 +87,11 @@ function App() {
     [dispatch]
   )
 
+  const setCurrentEmail = React.useCallback(
+    (email: string) => dispatch(setEmail(email)),
+    [dispatch]
+  )
+
   
   const mainBlock = () => {
     switch(stage) {
@@ -115,7 +120,7 @@ function App() {
           return <Main_8 nextStage={nextStage} stage={stage} previousStage={previousStage} zodiac={zodiac} decisionSourse={decisionSourse} />
       
       case 9:
-          return <Main_9 />
+          return <Main_9 setCurrentEmail={setCurrentEmail} />
     
       default:
         <main>Main content</main>

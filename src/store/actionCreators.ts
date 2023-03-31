@@ -65,12 +65,19 @@ type DecisionSourseActionType = {
   }
 }
 
+type EmailActionType = {
+  type: typeof actionTypes.SET_EMAIL
+  payload: {
+    email: string
+  }
+}
+
 
 export type CombinedType = IncrementActionType | DecrementActionType | 
                             GenderActionType | RaltionshipStatusActionType |
                             IsParentActionType | IsSingleParentActionType |
                             DecisionSourseActionType | ZodiacActionType |
-                            AgeActionType
+                            AgeActionType | EmailActionType
 
                             
 export const incrementStage =(stage: number):IncrementActionType => ({
@@ -116,6 +123,11 @@ export const setIsSingleParent = (isSingleParent: boolean):IsSingleParentActionT
 export const setDecisionSourse = (decisionSourse: 'heart' | 'head' | 'both'):DecisionSourseActionType => ({
   type: actionTypes.SET_DECISION_SOURSE,
   payload: {decisionSourse},
+})
+
+export const setEmail = (email: string):EmailActionType => ({
+  type: actionTypes.SET_EMAIL,
+  payload: {email},
 })
 
 

@@ -4,8 +4,11 @@ import BasicFormSchema from '../../../utils/yup/yupSchema';
 
 import styles from './Main_9.module.css';
 
+type Props = {
+  setCurrentEmail: (email: string) => void
+}
 
-const Stage_9: React.FC = () => {
+const Stage_9: React.FC<Props> = ({ setCurrentEmail }) => {
 
   return (
     <main className={styles.main}>
@@ -17,7 +20,7 @@ const Stage_9: React.FC = () => {
         validationSchema={BasicFormSchema}
         onSubmit={values => {
           setTimeout(() => {
-            console.log(JSON.stringify(values, null, 2));
+            setCurrentEmail(values.email);
           }, 500);
         }}
         render={({ errors, touched }) => (
