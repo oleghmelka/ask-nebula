@@ -5,7 +5,7 @@ import { nanoid } from 'nanoid'
 
 import { setIsParent, CombinedType } from "../../../store/actionCreators"
 
-import styles from './Main_5.module.css';
+import styles from './ParentSelection.module.css';
 
 
 type Props = {
@@ -14,7 +14,7 @@ type Props = {
   status: string
 }
 
-const Stage_5: React.FC<Props> = ({nextStage, stage, status}) => {
+const ParentSelection: React.FC<Props> = ({nextStage, stage, status}) => {
   
   interface ButtonsType {
     text: string;
@@ -83,4 +83,4 @@ const Stage_5: React.FC<Props> = ({nextStage, stage, status}) => {
   )
 }
 
-export default Stage_5
+export default ParentSelection

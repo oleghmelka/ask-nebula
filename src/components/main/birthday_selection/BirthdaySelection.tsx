@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import styles from './Main_2.module.css';
+import styles from './BirthdaySelection.module.css';
 
 
 type Props = {
@@ -48,7 +48,7 @@ const getZodiacSign = (date: Date): string | null => {
 }
 
 
-const Stage_2: React.FC<Props>  = ({nextStage, stage, setCurrentZodiac, setCurrentAge}) => {
+const BirthdaySelection: React.FC<Props>  = ({nextStage, stage, setCurrentZodiac, setCurrentAge}) => {
 
   const handleDateChange = () => {
 
@@ -124,6 +124,6 @@ const Stage_2: React.FC<Props>  = ({nextStage, stage, setCurrentZodiac, setCurre
   )
 }
 
-export default Stage_2
+export default BirthdaySelection
 
 

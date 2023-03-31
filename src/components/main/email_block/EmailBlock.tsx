@@ -2,13 +2,13 @@ import React from 'react'
 import { Formik, Field, Form } from 'formik';
 import BasicFormSchema from '../../../utils/yup/yupSchema';
 
-import styles from './Main_9.module.css';
+import styles from './EmailBlock.module.css';
 
 type Props = {
   setCurrentEmail: (email: string) => void
 }
 
-const Stage_9: React.FC<Props> = ({ setCurrentEmail }) => {
+const EmailBlock: React.FC<Props> = ({ setCurrentEmail }) => {
 
   return (
     <main className={styles.main}>
@@ -42,7 +42,7 @@ const Stage_9: React.FC<Props> = ({ setCurrentEmail }) => {
   )
 }
 
-export default Stage_9
+export default EmailBlock
 
 
 

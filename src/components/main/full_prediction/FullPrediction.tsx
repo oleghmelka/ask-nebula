@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './Main_8.module.css';
+import styles from './FullPrediction.module.css';
 
 import heart from '../../../assets/heart.png'
 import both from '../../../assets/both.png'
@@ -16,7 +16,7 @@ type Props = {
 }
 
 
-const Stage_8: React.FC<Props> = ({previousStage, nextStage, stage, zodiac, decisionSourse}) => {
+const FullPrediction: React.FC<Props> = ({previousStage, nextStage, stage, zodiac, decisionSourse}) => {
 
   const handleGoBack = () => {
     previousStage(stage - 1)
@@ -61,4 +61,4 @@ const Stage_8: React.FC<Props> = ({previousStage, nextStage, stage, zodiac, deci
   )
 }
 
-export default Stage_8
+export default FullPrediction

@@ -1,7 +1,7 @@
 import React from 'react'
 import { nanoid } from 'nanoid'
 
-import styles from './Main_6.module.css';
+import styles from './FeelSelection.module.css';
 
 
 type Props = {
@@ -14,7 +14,7 @@ type Props = {
   isSingleParent: boolean
 }
 
-const Stage_6: React.FC<Props> = ({nextStage, stage, status, gender, age, isParent, isSingleParent}) => {
+const FeelSelection: React.FC<Props> = ({nextStage, stage, status, gender, age, isParent, isSingleParent}) => {
 
   const buttonsSingleParent: Array<string> = [
     'I was unhappy with low things were going in my relationship',
@@ -72,4 +72,4 @@ const Stage_6: React.FC<Props> = ({nextStage, stage, status, gender, age, isPare
   )
 }
 
-export default Stage_6
+export default FeelSelection

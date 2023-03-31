@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux"
 
 import { setGender, CombinedType } from "../../../store/actionCreators"
 
-import styles from './Main_1.module.css';
+import styles from './GenderSelection.module.css';
 
 import male from '../../../assets/male.png'
 import female from '../../../assets/female.png'
@@ -15,7 +15,7 @@ type Props = {
   stage: number
 }
 
-const Stage_1: React.FC<Props> = ({nextStage, stage}) => {
+const GenderSelection: React.FC<Props> = ({nextStage, stage}) => {
 
   const dispatch: Dispatch<CombinedType> = useDispatch()
 
@@ -52,4 +52,4 @@ const Stage_1: React.FC<Props> = ({nextStage, stage}) => {
   )
 }
 
-export default Stage_1
+export default GenderSelection

@@ -10,15 +10,15 @@ import "./App.css";
 
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-import Main_1 from "./components/main/main_1/Main_1";
-import Main_2 from "./components/main/main_2/Main_2";
-import Main_3 from "./components/main/main_3/Main_3";
-import Main_4 from "./components/main/main_4/Main_4";
-import Main_5 from "./components/main/main_5/Main_5";
-import Main_6 from "./components/main/main_6/Main_6";
-import Main_7 from "./components/main/main_7/Main_7";
-import Main_8 from "./components/main/main_8/Main_8";
-import Main_9 from "./components/main/main_9/Main_9";
+import GenderSelection from "./components/main/gender_selection/GenderSelection";
+import BirthdaySelection from "./components/main/birthday_selection/BirthdaySelection";
+import ZodiacSignPrediction from "./components/main/zodiac_sign_prediction/ZodiacSignPrediction";
+import RelationshipStatus from "./components/main/relationship_status/RelationshipStatus";
+import ParentSelection from "./components/main/parent_selection/ParentSelection";
+import FeelSelection from "./components/main/feel_selection/FeelSelection";
+import DecisionSelection from "./components/main/decision_selection/DecisionSelection";
+import FullPrediction from "./components/main/full_prediction/FullPrediction";
+import EmailBlock from "./components/main/email_block/EmailBlock";
 
 
 function App() {
@@ -96,31 +96,31 @@ function App() {
   const mainBlock = () => {
     switch(stage) {
       case 1:
-        return <Main_1 nextStage={nextStage} stage={stage} />
+        return <GenderSelection nextStage={nextStage} stage={stage} />
     
       case 2:
-        return <Main_2 nextStage={nextStage} stage={stage} setCurrentZodiac={setCurrentZodiac} setCurrentAge={setCurrentAge} />
+        return <BirthdaySelection nextStage={nextStage} stage={stage} setCurrentZodiac={setCurrentZodiac} setCurrentAge={setCurrentAge} />
 
       case 3:
-        return <Main_3 nextStage={nextStage} stage={stage} zodiac={zodiac}/>
+        return <ZodiacSignPrediction nextStage={nextStage} stage={stage} zodiac={zodiac}/>
 
       case 4:
-          return <Main_4 nextStage={nextStage} stage={stage} />
+          return <RelationshipStatus nextStage={nextStage} stage={stage} />
 
       case 5:
-          return <Main_5 nextStage={nextStage} stage={stage} status={status} />
+          return <ParentSelection nextStage={nextStage} stage={stage} status={status} />
 
       case 6:
-          return <Main_6 nextStage={nextStage} stage={stage} status={status} gender={gender} age={age} isParent={isParent} isSingleParent={isSingleParent} />
+          return <FeelSelection nextStage={nextStage} stage={stage} status={status} gender={gender} age={age} isParent={isParent} isSingleParent={isSingleParent} />
 
       case 7:
-          return <Main_7 nextStage={nextStage} stage={stage} />
+          return <DecisionSelection nextStage={nextStage} stage={stage} />
 
       case 8:
-          return <Main_8 nextStage={nextStage} stage={stage} previousStage={previousStage} zodiac={zodiac} decisionSourse={decisionSourse} />
+          return <FullPrediction nextStage={nextStage} stage={stage} previousStage={previousStage} zodiac={zodiac} decisionSourse={decisionSourse} />
       
       case 9:
-          return <Main_9 setCurrentEmail={setCurrentEmail} />
+          return <EmailBlock setCurrentEmail={setCurrentEmail} />
     
       default:
         <main>Main content</main>

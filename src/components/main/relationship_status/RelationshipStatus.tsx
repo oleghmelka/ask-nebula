@@ -5,7 +5,7 @@ import { nanoid } from 'nanoid'
 
 import { setRelationshipStatus, CombinedType } from "../../../store/actionCreators"
 
-import styles from './Main_4.module.css';
+import styles from './RelationshipStatus.module.css';
 
 
 type Props = {
@@ -14,7 +14,7 @@ type Props = {
 }
 
 
-const Stage_4: React.FC<Props> = ({nextStage, stage}) => {
+const RelationshipStatus: React.FC<Props> = ({nextStage, stage}) => {
 
   const dispatch: Dispatch<CombinedType> = useDispatch()
 
@@ -56,4 +56,4 @@ const Stage_4: React.FC<Props> = ({nextStage, stage}) => {
   )
 }
 
-export default Stage_4
+export default RelationshipStatus

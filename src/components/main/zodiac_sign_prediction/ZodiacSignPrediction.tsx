@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, shallowEqual } from "react-redux"
 
-import styles from './Main_3.module.css';
+import styles from './ZodiacSignPrediction.module.css';
 
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
 }
 
 
-const Stage_3: React.FC<Props> = ({nextStage, stage, zodiac}) => {
+const ZodiacSignPrediction: React.FC<Props> = ({nextStage, stage, zodiac}) => {
 
   type StagesState = {
     stage: number
@@ -47,4 +47,4 @@ const Stage_3: React.FC<Props> = ({nextStage, stage, zodiac}) => {
   )
 }
 
-export default Stage_3
+export default ZodiacSignPrediction

@@ -5,7 +5,7 @@ import { nanoid } from 'nanoid'
 
 import { setDecisionSourse, CombinedType } from "../../../store/actionCreators"
 
-import styles from './Main_7.module.css';
+import styles from './DecisionSelection.module.css';
 
 
 type Props = {
@@ -13,7 +13,7 @@ type Props = {
   stage: number
 }
 
-const Stage_7: React.FC<Props> = ({nextStage, stage}) => {
+const DecisionSelection: React.FC<Props> = ({nextStage, stage}) => {
 
   interface ButtonsType {
     text: string;
@@ -56,4 +56,4 @@ const Stage_7: React.FC<Props> = ({nextStage, stage}) => {
   )
 }
 
-export default Stage_7
+export default DecisionSelection
